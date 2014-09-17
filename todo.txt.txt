@@ -1,0 +1,10 @@
+Um, what happened to my comment? What I wrote was that an typo error appears to have been introduced in circ_kuipertest.m in the advance to version 2011f. In 2010e, line 48 of the file reads: 
+[phis2 cdf2 phiplot2 cdfplot2] = circ_samplecdf(alpha2, res);
+
+and in version 2011f, that line reads: 
+[~, cdf2 phiplot2 cdfplot2] = circ_samplecdf(alpha2, res);
+
+and matlab complains of incorrect statement or expression.
+
+
+-------------------
