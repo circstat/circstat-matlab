@@ -9,7 +9,7 @@ function med = circ_median(alpha,dim)
 %           be either 1 or 2 for circ_median]
 %
 %   Output:
-%     mu		mean direction
+%     mu		median direction
 %
 %   circ_median can be slow for large datasets
 %
