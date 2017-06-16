@@ -1,4 +1,4 @@
-function [mu ul ll] = circ_mean(alpha, w, dim)
+function [mu, ul, ll] = circ_mean(alpha, w, dim)
 %
 % mu = circ_mean(alpha, w)
 %   Computes the mean direction for circular data.
@@ -53,4 +53,5 @@ if nargout > 1
   t = circ_confmean(alpha,0.05,w,[],dim);
   ul = mu + t;
   ll = mu - t;
+end
 end

@@ -59,4 +59,4 @@ if d ~= 0
   c = d/2/sin(d/2);
   r = c*r;
 end
-
+end

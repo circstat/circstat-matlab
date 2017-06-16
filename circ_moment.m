@@ -1,4 +1,4 @@
-function [mp  rho_p mu_p] = circ_moment(alpha, w, p, cent, dim)
+function [mp,  rho_p, mu_p] = circ_moment(alpha, w, p, cent, dim)
 
 % [mp cbar sbar] = circ_moment(alpha, w, p, cent, dim)
 %   Calculates the complex p-th centred or non-centred moment 
@@ -65,5 +65,4 @@ mp = cbar + 1i*sbar;
 
 rho_p = abs(mp);
 mu_p = angle(mp);
-
-
+end

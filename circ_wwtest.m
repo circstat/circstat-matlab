@@ -1,4 +1,4 @@
-function [pval table] = circ_wwtest(varargin)
+function [pval, table] = circ_wwtest(varargin)
 % [pval, table] = circ_wwtest(alpha, idx, [w])
 % [pval, table] = circ_wwtest(alpha1, alpha2, [w1, w2])
 %   Parametric Watson-Williams multi-sample test for equal means. Can be
@@ -155,4 +155,3 @@ function [alpha, idx, w] = processInput(varargin)
     error('Invalid use of circ_wwtest. Type help circ_wwtest.')
   end
 end
-

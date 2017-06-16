@@ -1,4 +1,4 @@
-function [b b0] = circ_skewness(alpha, w, dim)
+function [b, b0] = circ_skewness(alpha, w, dim)
 
 % [b b0] = circ_skewness(alpha,w,dim)
 %   Calculates a measure of angular skewness.
@@ -42,11 +42,10 @@ end
 % compute neccessary values
 R = circ_r(alpha,w,[],dim);
 theta = circ_mean(alpha,w,dim);
-[~, rho2 mu2] = circ_moment(alpha,w,2,true,dim);
+[~, rho2, mu2] = circ_moment(alpha,w,2,true,dim);
 
 % compute skewness 
 theta2 = repmat(theta, size(alpha)./size(theta));
 b = sum(w.*(sin(2*(circ_dist(alpha,theta2)))),dim)./sum(w,dim);
 b0 = rho2.*sin(circ_dist(mu2,2*theta))./(1-R).^(3/2);    % (formula 2.29)
-
-
+end

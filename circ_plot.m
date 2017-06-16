@@ -89,7 +89,7 @@ switch format
     set(gca,'box','off')
     set(gca,'xtick',[])
     set(gca,'ytick',[])
-    text(1.2, 0, '0'); text(-.05, 1.2, '\pi/2');  text(-1.35, 0, '±\pi');  text(-.075, -1.2, '-\pi/2');
+    text(1.2, 0, '0'); text(-.05, 1.2, '\pi/2');  text(-1.35, 0, 'ï¿½\pi');  text(-.075, -1.2, '-\pi/2');
 
     
   case 'hist'
@@ -141,3 +141,4 @@ switch format
 end
 
 a = gca;
+end

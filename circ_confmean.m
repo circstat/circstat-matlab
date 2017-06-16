@@ -73,7 +73,4 @@ end
 
 % apply final transform
 t = acos(t./R);
-  
-
-
-
+end

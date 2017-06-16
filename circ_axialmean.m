@@ -1,4 +1,4 @@
-function [r mu] = circ_axialmean(alphas, m, dim)
+function [r, mu] = circ_axialmean(alphas, m, dim)
 %
 % mu = circ_axialmean(alpha, w)
 %   Computes the mean direction for circular data with axial 
@@ -38,4 +38,4 @@ zbarm = mean(exp(1i*alphas*m),dim);
 
 r = abs(zbarm);
 mu = angle(zbarm)/m;
-
+end

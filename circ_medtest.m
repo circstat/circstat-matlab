@@ -40,7 +40,4 @@ n2 = sum(d>0);
 
 % compute p-value with binomial test
 pval = sum(binopdf([0:min(n1,n2) max(n1,n2):n],n,0.5));
-
-
-
-
+end

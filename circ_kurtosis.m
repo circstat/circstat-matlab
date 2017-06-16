@@ -1,4 +1,4 @@
-function [k k0] = circ_kurtosis(alpha, w, dim)
+function [k, k0] = circ_kurtosis(alpha, w, dim)
 
 % [k k0] = circ_kurtosis(alpha,w,dim)
 %   Calculates a measure of angular kurtosis.
@@ -48,4 +48,5 @@ theta = circ_mean(alpha,w,dim);
 theta2 = repmat(theta, size(alpha)./size(theta));
 k = sum(w.*(cos(2*(circ_dist(alpha,theta2)))),dim)./sum(w,dim);
 k0 = (rho2.*cos(circ_dist(mu2,2*theta))-R.^4)./(1-R).^2;    % (formula 2.30)
+end
 

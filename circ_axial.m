@@ -27,3 +27,4 @@ if nargin < 2
 end
 
 alpha = mod(alpha*p,2*pi);
+end

@@ -34,7 +34,4 @@ d = circ_dist(alpha,md);
 
 % compute wilcoxon sign rank test
 pval = signrank(d);
-
-
-
-
+end

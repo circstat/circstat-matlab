@@ -55,3 +55,4 @@ if N<15 && N>1
     kappa = (N-1)^3*kappa/(N^3+N);
   end
 end
+end

@@ -48,7 +48,7 @@ for i=1:M(3-dim)
 
   dm = abs(m1-m2);
   if mod(n,2)==1
-    [m idx] = min(dm);
+    [m, idx] = min(dm);
   else
     m = min(dm);
     idx = find(dm==m,2);
@@ -69,4 +69,5 @@ end
 
 if dim == 2
   med = med';
+end
 end
