@@ -5,7 +5,7 @@ function med = circ_median(alpha,dim)
 %
 %   Input:
 %     alpha	sample of angles in radians
-%     [dim  compute along this dimension, default is 1, must 
+%     [dim  compute along this dimension, default: 1st non-singular dimension, must 
 %           be either 1 or 2 for circ_median]
 %
 %   Output:
@@ -25,7 +25,10 @@ function med = circ_median(alpha,dim)
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
 if nargin < 2
-  dim = 1;
+  dim = find(size(alpha) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end  
 end
 
 M = size(alpha);

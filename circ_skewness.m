@@ -6,7 +6,7 @@ function [b, b0] = circ_skewness(alpha, w, dim)
 %   Input:
 %     alpha     sample of angles
 %     [w        weightings in case of binned angle data]
-%     [dim      statistic computed along this dimension, 1]
+%     [dim      statistic computed along this dimension, default: 1st non-singular dimension]
 %
 %     If dim argument is specified, all other optional arguments can be
 %     left empty: circ_skewness(alpha, [], dim)
@@ -25,7 +25,10 @@ function [b, b0] = circ_skewness(alpha, w, dim)
 % berens@tuebingen.mpg.de
 
 if nargin < 3
-  dim = 1;
+  dim = find(size(alpha) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end  
 end
 
 if nargin < 2 || isempty(w)

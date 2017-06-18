@@ -7,7 +7,7 @@ function [r, mu] = circ_axialmean(alphas, m, dim)
 %   Input:
 %     alpha	sample of angles in radians
 %     [m		axial correction (2,3,4,...)]
-%     [dim      statistic computed along this dimension, 1]
+%     [dim      statistic computed along this dimension, default: 1st non-singular dimension]
 %
 %   Output:
 %     r		mean resultant length
@@ -27,7 +27,10 @@ function [r, mu] = circ_axialmean(alphas, m, dim)
 % Distributed under Open Source BSD License
 
 if nargin < 3
-  dim = 1;
+  dim = find(size(alphas) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end
 end
 
 if nargin < 2 || isempty(m)
