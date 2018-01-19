@@ -42,7 +42,7 @@ end
 % compute neccessary values
 R = circ_r(alpha,w,[],dim);
 theta = circ_mean(alpha,w,dim);
-[~, rho2 mu2] = circ_moment(alpha,w,2,true,dim);
+[~, rho2 mu2] = circ_moment(alpha,w,2,false,dim);
 
 % compute skewness 
 theta2 = repmat(theta, size(alpha)./size(theta));
