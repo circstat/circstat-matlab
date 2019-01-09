@@ -1,5 +1,5 @@
 function r = circ_r(alpha, w, d, dim)
-% r = circ_r(alpha, w, d)
+% r = circ_r(alpha, w, d, dim)
 %   Computes mean resultant vector length for circular data.
 %
 %   Input:

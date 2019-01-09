@@ -1,5 +1,5 @@
 function [s s0] = circ_std(alpha, w, d, dim)
-% s = circ_std(alpha, w, d, dim)
+% [s, s0] = circ_std(alpha, w, d, dim)
 %   Computes circular standard deviation for circular data 
 %   (equ. 26.20, Zar).   
 %
@@ -52,6 +52,3 @@ r = circ_r(alpha,w,d,dim);
 
 s = sqrt(2*(1-r));      % 26.20
 s0 = sqrt(-2*log(r));    % 26.21
-
-
-

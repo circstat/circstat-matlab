@@ -1,6 +1,6 @@
 function pval = circ_medtest(alpha,md)
 %
-% [pval, z] = circ_medtest(alpha,w)
+% pval = circ_medtest(alpha, md)
 %   Tests for significance of the median.
 %   H0: the population has median angle md
 %   HA: the population has not median angle md

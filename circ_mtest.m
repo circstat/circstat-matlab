@@ -1,6 +1,6 @@
 function [h mu ul ll] = circ_mtest(alpha, dir, xi, w, d)
 %
-% [pval, z] = circ_mtest(alpha, dir, w, d)
+% [h mu ul ll] = circ_mtest(alpha, dir, xi, w, d)
 %   One-Sample test for the mean angle.
 %   H0: the population has mean dir.
 %   HA: the population has not mean dir.

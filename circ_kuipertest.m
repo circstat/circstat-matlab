@@ -1,6 +1,6 @@
 function [pval, k, K] = circ_kuipertest(alpha1, alpha2, res, vis_on)
 
-% [pval, k, K] = circ_kuipertest(sample1, sample2, res, vis_on)
+% [pval, k, K] = circ_kuipertest(alpha1, alpha2, res, vis_on)
 %
 %   The Kuiper two-sample test tests whether the two samples differ 
 %   significantly.The difference can be in any property, such as mean 

@@ -1,6 +1,6 @@
 function stats = circ_stats(alpha, w, d)
 %
-% stats = circ_stats(alpha, w)
+% stats = circ_stats(alpha, w, d)
 %   Computes descriptive statistics for circular data.
 %
 %   Input:
@@ -60,7 +60,3 @@ stats.var = circ_var(alpha,w,d);
 
 % kurtosis
 [stats.kurtosis stats.kurtosis0] = circ_kurtosis(alpha,w);
-
-
-
-

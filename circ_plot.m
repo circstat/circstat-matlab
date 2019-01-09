@@ -1,6 +1,6 @@
 function a = circ_plot(alpha, format, formats, varargin)
 %
-% r = circ_plot(alpha, ...)
+% a = circ_plot(alpha, ...)
 %   Plotting routines for circular data.
 %
 %   Input:

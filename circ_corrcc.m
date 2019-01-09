@@ -1,6 +1,6 @@
 function [rho pval] = circ_corrcc(alpha1, alpha2)
 %
-% [rho pval ts] = circ_corrcc(alpha1, alpha2)
+% [rho pval] = circ_corrcc(alpha1, alpha2)
 %   Circular correlation coefficient for two circular random variables.
 %
 %   Input:

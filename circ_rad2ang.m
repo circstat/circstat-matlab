@@ -1,6 +1,6 @@
 function alpha = circ_rad2ang(alpha)
 
-% alpha = circ-rad2ang(alpha)
+% alpha = circ_rad2ang(alpha)
 %   converts values in radians to values in degree
 %
 % Circular Statistics Toolbox for Matlab

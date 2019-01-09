@@ -1,6 +1,6 @@
 function r =  circ_dist2(x,y)
 %
-% r = circ_dist(alpha, beta)
+% r = circ_dist2(alpha, beta)
 %   All pairwise difference x_i-y_j around the circle computed efficiently.
 %
 %   Input:

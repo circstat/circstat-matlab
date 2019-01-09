@@ -1,6 +1,6 @@
 function med = circ_median(alpha,dim)
 %
-% med = circ_median(alpha)
+% med = circ_median(alpha, dim)
 %   Computes the median direction for circular data.
 %
 %   Input:
@@ -9,7 +9,7 @@ function med = circ_median(alpha,dim)
 %           be either 1 or 2 for circ_median]
 %
 %   Output:
-%     mu		median direction
+%     med		median direction
 %
 %   circ_median can be slow for large datasets
 %

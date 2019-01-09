@@ -1,6 +1,6 @@
 function [rho pval] = circ_corrcl(alpha, x)
 %
-% [rho pval ts] = circ_corrcc(alpha, x)
+% [rho pval] = circ_corrcc(alpha, x)
 %   Correlation coefficient between one circular and one linear random
 %   variable.
 %

@@ -1,5 +1,5 @@
 function [phis, cdf, phiplot, cdfplot] = circ_samplecdf(thetas, resolution)
-
+%
 % [phis, cdf, phiplot, cdfplot] = circ_samplecdf(thetas, resolution)
 %
 %   Helper function for circ_kuipertest.
@@ -67,8 +67,3 @@ end
 
 phiplot = [phisplottable 2*pi];
 cdfplot = [cdfplottable 1];
-
-
-
-
-

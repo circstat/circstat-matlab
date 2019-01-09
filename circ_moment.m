@@ -1,6 +1,6 @@
 function [mp  rho_p mu_p] = circ_moment(alpha, w, p, cent, dim)
 
-% [mp cbar sbar] = circ_moment(alpha, w, p, cent, dim)
+% [mp rho_p mu_p] = circ_moment(alpha, w, p, cent, dim)
 %   Calculates the complex p-th centred or non-centred moment 
 %   of the angular data in angle.
 %

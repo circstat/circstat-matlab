@@ -1,8 +1,8 @@
 function alpha = circ_vmrnd(theta, kappa, n)
-
+%
 % alpha = circ_vmrnd(theta, kappa, n)
 %   Simulates n random angles from a von Mises distribution, with preferred 
-%   direction thetahat and concentration parameter kappa.
+%   direction theta and concentration parameter kappa.
 %
 %   Input:
 %     [theta    preferred direction, default is 0]

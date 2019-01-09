@@ -1,5 +1,5 @@
 function [p U UC] = circ_raotest(alpha)
-
+%
 % [p U UC] = circ_raotest(alpha)
 %   Calculates Rao's spacing test by comparing distances between points on
 %   a circle to those expected from a uniform distribution.
