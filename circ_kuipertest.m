@@ -97,7 +97,8 @@ if ~easy
    if row == 0
        error('N too small.');
    else
-      warning('N=%d not found in table, using closest N=%d present.',n,nn(row)) %#ok<WNTAG>
+      warning('CIRCSTAT:circ_kuipertest:nNotFound', ...
+          'N=%d not found in table, using closest N=%d present.',n,nn(row)) %#ok<WNTAG>
    end
 end
 

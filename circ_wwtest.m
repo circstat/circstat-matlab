@@ -106,13 +106,17 @@ end
 function checkAssumption(rw,n)
 
   if n >= 11 && rw<.45
-    warning('Test not applicable. Average resultant vector length < 0.45.') %#ok<WNTAG>
+    warning('CIRCSTAT:circ_wwtest:vectorTooShort', ...
+        'Test not applicable. Average resultant vector length < 0.45.') %#ok<WNTAG>
   elseif n<11 && n>=7 && rw<.5
-    warning('Test not applicable. Average number of samples per population 6 < x < 11 and average resultant vector length < 0.5.') %#ok<WNTAG>
+    warning('CIRCSTAT:circ_wwtest:sampleSize6x11AndVectorTooShort', ...
+        'Test not applicable. Average number of samples per population 6 < x < 11 and average resultant vector length < 0.5.') %#ok<WNTAG>
   elseif n>=5 && n<7 && rw<.55
-    warning('Test not applicable. Average number of samples per population 4 < x < 7 and average resultant vector length < 0.55.') %#ok<WNTAG>
+    warning('CIRCSTAT:circ_wwtest:sampleSize4x7AndVectorTooShort', ...
+        'Test not applicable. Average number of samples per population 4 < x < 7 and average resultant vector length < 0.55.') %#ok<WNTAG>
   elseif n < 5
-    warning('Test not applicable. Average number of samples per population < 5.') %#ok<WNTAG>
+    warning('CIRCSTAT:circ_wwtest:sampleSizeTooSmall', ...
+        'Test not applicable. Average number of samples per population < 5.') %#ok<WNTAG>
   end
 
 end

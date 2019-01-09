@@ -55,7 +55,8 @@ for i=1:M(3-dim)
   end
 
   if m > 1
-    warning('Ties detected.') %#ok<WNTAG>
+    warning('CIRCSTAT:circ_median:tiesDetected', ...
+        'Ties detected.') %#ok<WNTAG>
   end
 
   md = circ_mean(beta(idx));

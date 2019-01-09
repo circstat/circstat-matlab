@@ -39,7 +39,8 @@ R2 = n2*circ_r(alpha2);
 rbar = (R1+R2)/(n1+n2);
 
 if rbar < .7
-    warning('resultant vector length should be > 0.7') %#ok<WNTAG>
+    warning('CIRCSTAT:circ_ktest:vectorTooShort', ...
+        'Resultant vector length should be > 0.7') %#ok<WNTAG>
 end
 
 % calculate test statistic

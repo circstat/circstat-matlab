@@ -55,7 +55,8 @@ for t=1:s
 end
 
 if any(n<10)
-  warning('Test not applicable. Sample size in at least one group to small.') %#ok<WNTAG>
+  warning('CIRCSTAT:circ_cmtest:sampleSizeTooSmall', ...
+      'Test not applicable. Sample size in at least one group too small.') %#ok<WNTAG>
 end
   
 
