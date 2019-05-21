@@ -47,7 +47,7 @@ end
 
 % if kappa is small, treat as uniform distribution
 if kappa < 1e-6
-    alpha = 2*pi*rand(n,1);
+    alpha = 2*pi*rand(n,1)-pi;
     return
 end
 
