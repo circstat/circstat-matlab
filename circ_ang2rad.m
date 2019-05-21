@@ -9,3 +9,4 @@ function alpha = circ_ang2rad(alpha)
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
 alpha = alpha * pi /180;
+end

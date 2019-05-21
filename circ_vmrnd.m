@@ -79,9 +79,4 @@ end
 if exist('m','var')
   alpha = reshape(alpha,m(1),m(2));
 end
-
-
-
-
-
-
+end

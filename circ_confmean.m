@@ -10,7 +10,7 @@ function t = circ_confmean(alpha, xi, w, d, dim)
 %     [d    spacing of bin centers for binned data, if supplied 
 %           correction factor is used to correct for bias in 
 %           estimation of r, in radians (!)]
-%     [dim  compute along this dimension, default is 1]
+%     [dim  compute along this dimension, default: 1st non-singular dimension]
 %
 %   Output:
 %     t     mean +- d yields upper/lower (1-xi)% confidence limit
@@ -28,7 +28,10 @@ function t = circ_confmean(alpha, xi, w, d, dim)
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
 if nargin < 5
-  dim = 1;
+  dim = find(size(alpha) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end
 end
 
 if nargin < 4 || isempty(d)
@@ -74,7 +77,4 @@ end
 
 % apply final transform
 t = acos(t./R);
-  
-
-
-
+end

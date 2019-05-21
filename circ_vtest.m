@@ -1,4 +1,4 @@
-function [pval v] = circ_vtest(alpha, dir, w, d)
+function [pval, v] = circ_vtest(alpha, dir, w, d)
 %
 % [pval, v] = circ_vtest(alpha, dir, w, d)
 %   Computes V test for non-uniformity of circular data with a specified 
@@ -75,3 +75,4 @@ u = v * sqrt(2/n);
 
 % compute p-value from one tailed normal approximation
 pval = 1 - normcdf(u);
+end

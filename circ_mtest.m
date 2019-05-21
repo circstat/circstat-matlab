@@ -1,4 +1,4 @@
-function [h mu ul ll] = circ_mtest(alpha, dir, xi, w, d)
+function [h, mu, ul, ll] = circ_mtest(alpha, dir, xi, w, d)
 %
 % [h mu ul ll] = circ_mtest(alpha, dir, xi, w, d)
 %   One-Sample test for the mean angle.
@@ -67,3 +67,4 @@ ll = mu - t;
 
 % compute test via confidence limits (example 27.3)
 h = abs(circ_dist2(dir,mu)) > t;
+end

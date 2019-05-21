@@ -51,10 +51,4 @@ else
   f = 1/f; 
   pval = 2*(1-fcdf(f, n2, n1));
 end
-
-
-
-
-
-
-
+end

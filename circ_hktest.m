@@ -1,4 +1,4 @@
-function [pval table] = circ_hktest(alpha, idp, idq, inter, fn)
+function [pval, table] = circ_hktest(alpha, idp, idq, inter, fn)
 
 %
 % [pval, stats] = circ_hktest(alpha, idp, idq, inter, fn)
@@ -238,16 +238,4 @@ prepareOutput;
     end
     
   end
-
-
 end
-
-
-
-
-
-
-
-
-
-

@@ -60,10 +60,11 @@ cdf2 = [0 cdf(1:end-1)];
 cdfplottable = [];
 phisplottable = [];
 
-for j=1:length(phis);
+for j=1:length(phis)
    phisplottable = [phisplottable phis(j) phis2(j)]; %#ok<AGROW>
    cdfplottable = [cdfplottable cdf2(j) cdf(j)]; %#ok<AGROW>
 end
 
 phiplot = [phisplottable 2*pi];
 cdfplot = [cdfplottable 1];
+end

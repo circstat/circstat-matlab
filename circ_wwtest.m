@@ -1,4 +1,4 @@
-function [pval table] = circ_wwtest(varargin)
+function [pval, table] = circ_wwtest(varargin)
 %
 % [pval, table] = circ_wwtest(alpha, idx, [w])
 % [pval, table] = circ_wwtest(alpha1, alpha2, [w1, w2])

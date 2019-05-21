@@ -138,7 +138,7 @@ figure(figurenum);
 colors={'y', 'b', 'r', 'g', 'c', 'k', 'm'};
 
 hold on;
-for j=1:length(csmall);
+for j=1:length(csmall)
     
    ci = (c == csmall(j));
    plot(x(ci), y(ci), strcat(pstring, colors{mod(j, length(colors))+1}), 'MarkerSize', ms);
@@ -146,6 +146,5 @@ for j=1:length(csmall);
 end
 if ~overlay, hold off; end
 figure(figurenum)
-
-
-
+end
+end

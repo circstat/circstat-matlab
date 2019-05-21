@@ -1,4 +1,4 @@
-function [pval med P] = circ_cmtest(varargin)
+function [pval, med, P] = circ_cmtest(varargin)
 %
 % [pval, med, P] = circ_cmtest(alpha, idx)
 % [pval, med, P] = circ_cmtest(alpha1, alpha2)
@@ -68,7 +68,7 @@ pval = 1 - chi2cdf(P,s-1);
 if pval < 0.05
   med = NaN;
 end
-
+end
 
 
 
@@ -88,4 +88,4 @@ elseif nargin==2
 else
   error('Invalid use of circ_wwtest. Type help circ_wwtest.')
 end
-
+end
