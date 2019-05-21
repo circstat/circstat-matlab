@@ -65,6 +65,7 @@ if n > 50
   pval = sqrt(2*pi) / A * exp(-pi^2/8/A^2);
 else
   % exact formula by Hodges (1955)
-  pval = 2^(1-n) * (n-2*m) * nchoosek(n,m);  
+  % pval = 2^(1-n) * (n-2*m) * nchoosek(n,m);  % revised below for numerical stability
+  pval = exp((1-n)*log(2) + log(n-2*m) + gammaln(n+1) - gammaln(m+1) - gammaln(n-m+1));
 end
 end
