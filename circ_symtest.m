@@ -1,10 +1,10 @@
 function pval = circ_symtest(alpha)
 %
-% [pval, z] = circ_symtest(alpha,w)
+% pval = circ_symtest(alpha)
 %   Tests for symmetry about the median.
 %   H0: the population is symmetrical around the median
 %   HA: the population is not symmetrical around the median
-
+%
 %
 %   Input:
 %     alpha	sample of angles in radians
@@ -34,7 +34,4 @@ d = circ_dist(alpha,md);
 
 % compute wilcoxon sign rank test
 pval = signrank(d);
-
-
-
-
+end

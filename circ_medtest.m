@@ -1,6 +1,6 @@
 function pval = circ_medtest(alpha,md)
 %
-% [pval, z] = circ_medtest(alpha,w)
+% pval = circ_medtest(alpha, md)
 %   Tests for significance of the median.
 %   H0: the population has median angle md
 %   HA: the population has not median angle md
@@ -40,7 +40,4 @@ n2 = sum(d>0);
 
 % compute p-value with binomial test
 pval = sum(binopdf([0:min(n1,n2) max(n1,n2):n],n,0.5));
-
-
-
-
+end

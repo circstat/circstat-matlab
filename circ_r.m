@@ -1,5 +1,5 @@
 function r = circ_r(alpha, w, d, dim)
-% r = circ_r(alpha, w, d)
+% r = circ_r(alpha, w, d, dim)
 %   Computes mean resultant vector length for circular data.
 %
 %   Input:
@@ -8,7 +8,7 @@ function r = circ_r(alpha, w, d, dim)
 %     [d    spacing of bin centers for binned data, if supplied 
 %           correction factor is used to correct for bias in 
 %           estimation of r, in radians (!)]
-%     [dim  compute along this dimension, default is 1]
+%     [dim  compute along this dimension, default: 1st non-singular dimension]
 %
 %     If dim argument is specified, all other optional arguments can be
 %     left empty: circ_r(alpha, [], [], dim)
@@ -29,7 +29,10 @@ function r = circ_r(alpha, w, d, dim)
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
 if nargin < 4
-  dim = 1;
+  dim = find(size(alpha) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end
 end
 
 if nargin < 2 || isempty(w) 
@@ -59,4 +62,4 @@ if d ~= 0
   c = d/2/sin(d/2);
   r = c*r;
 end
-
+end

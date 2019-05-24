@@ -1,12 +1,12 @@
-function [b b0] = circ_skewness(alpha, w, dim)
-
+function [b, b0] = circ_skewness(alpha, w, dim)
+%
 % [b b0] = circ_skewness(alpha,w,dim)
 %   Calculates a measure of angular skewness.
 %
 %   Input:
 %     alpha     sample of angles
 %     [w        weightings in case of binned angle data]
-%     [dim      statistic computed along this dimension, 1]
+%     [dim      statistic computed along this dimension, default: 1st non-singular dimension]
 %
 %     If dim argument is specified, all other optional arguments can be
 %     left empty: circ_skewness(alpha, [], dim)
@@ -25,7 +25,10 @@ function [b b0] = circ_skewness(alpha, w, dim)
 % berens@tuebingen.mpg.de
 
 if nargin < 3
-  dim = 1;
+  dim = find(size(alpha) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end  
 end
 
 if nargin < 2 || isempty(w)
@@ -48,5 +51,4 @@ theta = circ_mean(alpha,w,dim);
 theta2 = repmat(theta, size(alpha)./size(theta));
 b = sum(w.*(sin(2*(circ_dist(alpha,theta2)))),dim)./sum(w,dim);
 b0 = rho2.*sin(circ_dist(mu2,2*theta))./(1-R).^(3/2);    % (formula 2.29)
-
-
+end

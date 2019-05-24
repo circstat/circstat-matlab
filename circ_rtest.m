@@ -1,6 +1,6 @@
-function [pval z] = circ_rtest(alpha, w, d)
+function [pval, z] = circ_rtest(alpha, w, d)
 %
-% [pval, z] = circ_rtest(alpha,w)
+% [pval, z] = circ_rtest(alpha,w,d)
 %   Computes Rayleigh test for non-uniformity of circular data.
 %   H0: the population is uniformly distributed around the circle
 %   HA: the populatoin is not distributed uniformly around the circle
@@ -65,11 +65,4 @@ pval = exp(sqrt(1+4*n+4*(n^2-R^2))-(1+2*n));
 %    (24*z - 132*z^2 + 76*z^3 - 9*z^4) / (288*n^2));
 % end
 
-
-
-
-
-
-
-
-
+end

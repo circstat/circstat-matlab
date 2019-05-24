@@ -1,4 +1,4 @@
-function [k k0] = circ_kurtosis(alpha, w, dim)
+function [k, k0] = circ_kurtosis(alpha, w, dim)
 
 % [k k0] = circ_kurtosis(alpha,w,dim)
 %   Calculates a measure of angular kurtosis.
@@ -6,7 +6,7 @@ function [k k0] = circ_kurtosis(alpha, w, dim)
 %   Input:
 %     alpha     sample of angles
 %     [w        weightings in case of binned angle data]
-%     [dim      statistic computed along this dimension, 1]
+%     [dim      statistic computed along this dimension, default: 1st non-singular dimension]
 %
 %     If dim argument is specified, all other optional arguments can be
 %     left empty: circ_kurtosis(alpha, [], dim)
@@ -25,7 +25,10 @@ function [k k0] = circ_kurtosis(alpha, w, dim)
 % berens@tuebingen.mpg.de
 
 if nargin < 3
-  dim = 1;
+  dim = find(size(alpha) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end  
 end
 
 if nargin < 2 || isempty(w)
@@ -48,4 +51,5 @@ theta = circ_mean(alpha,w,dim);
 theta2 = repmat(theta, size(alpha)./size(theta));
 k = sum(w.*(cos(2*(circ_dist(alpha,theta2)))),dim)./sum(w,dim);
 k0 = (rho2.*cos(circ_dist(mu2,2*theta))-R.^4)./(1-R).^2;    % (formula 2.30)
+end
 

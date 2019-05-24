@@ -1,6 +1,6 @@
 function stats = circ_stats(alpha, w, d)
 %
-% stats = circ_stats(alpha, w)
+% stats = circ_stats(alpha, w, d)
 %   Computes descriptive statistics for circular data.
 %
 %   Input:
@@ -52,15 +52,12 @@ end
 stats.var = circ_var(alpha,w,d);
 
 % standard deviation
-[stats.std stats.std0] = circ_std(alpha,w,d);
+[stats.std, stats.std0] = circ_std(alpha,w,d);
 
 
 % skewness
-[stats.skewness stats.skewness0] = circ_skewness(alpha,w);
+[stats.skewness, stats.skewness0] = circ_skewness(alpha,w);
 
 % kurtosis
-[stats.kurtosis stats.kurtosis0] = circ_kurtosis(alpha,w);
-
-
-
-
+[stats.kurtosis, stats.kurtosis0] = circ_kurtosis(alpha,w);
+end

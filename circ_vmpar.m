@@ -1,6 +1,6 @@
-function [thetahat kappa] = circ_vmpar(alpha,w,d)
-
-% r = circ_vmpar(alpha, w, d)
+function [thetahat, kappa] = circ_vmpar(alpha,w,d)
+%
+% [thetahat, kappa] = circ_vmpar(alpha, w, d)
 %   Estimate the parameters of a von Mises distribution.
 %
 %   Input:
@@ -36,3 +36,4 @@ r = circ_r(alpha,w,d);
 kappa = circ_kappa(r);
 
 thetahat = circ_mean(alpha,w);
+end

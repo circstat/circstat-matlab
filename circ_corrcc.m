@@ -1,6 +1,6 @@
-function [rho pval] = circ_corrcc(alpha1, alpha2)
+function [rho, pval] = circ_corrcc(alpha1, alpha2)
 %
-% [rho pval ts] = circ_corrcc(alpha1, alpha2)
+% [rho pval] = circ_corrcc(alpha1, alpha2)
 %   Circular correlation coefficient for two circular random variables.
 %
 %   Input:
@@ -50,4 +50,4 @@ l22 = mean((sin(alpha1 - alpha1_bar).^2) .* (sin(alpha2 - alpha2_bar).^2));
 
 ts = sqrt((n * l20 * l02)/l22) * rho;
 pval = 2 * (1 - normcdf(abs(ts)));
-
+end

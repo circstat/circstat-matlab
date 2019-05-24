@@ -1,6 +1,6 @@
-function [mp  rho_p mu_p] = circ_moment(alpha, w, p, cent, dim)
+function [mp,  rho_p, mu_p] = circ_moment(alpha, w, p, cent, dim)
 
-% [mp cbar sbar] = circ_moment(alpha, w, p, cent, dim)
+% [mp rho_p mu_p] = circ_moment(alpha, w, p, cent, dim)
 %   Calculates the complex p-th centred or non-centred moment 
 %   of the angular data in angle.
 %
@@ -9,7 +9,7 @@ function [mp  rho_p mu_p] = circ_moment(alpha, w, p, cent, dim)
 %     [w        weightings in case of binned angle data]
 %     [p        p-th moment to be computed, default is p=1]
 %     [cent     if true, central moments are computed, default = false]
-%     [dim      compute along this dimension, default is 1]
+%     [dim      compute along this dimension, default is 1st non-singular dimension]
 %
 %     If dim argument is specified, all other optional arguments can be
 %     left empty: circ_moment(alpha, [], [], [], dim)
@@ -29,7 +29,10 @@ function [mp  rho_p mu_p] = circ_moment(alpha, w, p, cent, dim)
 % berens@tuebingen.mpg.de
 
 if nargin < 5
-  dim = 1;
+  dim = find(size(alpha) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end
 end
 
 if nargin < 4
@@ -65,5 +68,4 @@ mp = cbar + 1i*sbar;
 
 rho_p = abs(mp);
 mu_p = angle(mp);
-
-
+end

@@ -20,10 +20,11 @@ function alpha = circ_axial(alpha, p)
 % By Philipp Berens, 2009
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
-% TESTING GIT
+
 
 if nargin < 2
     p = 1;
 end
 
 alpha = mod(alpha*p,2*pi);
+end

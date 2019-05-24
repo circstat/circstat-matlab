@@ -1,5 +1,5 @@
-function [S s] = circ_var(alpha, w, d, dim)
-% s = circ_var(alpha, w, d, dim)
+function [S, s] = circ_var(alpha, w, d, dim)
+% [S, s] = circ_var(alpha, w, d, dim)
 %   Computes circular variance for circular data 
 %   (equ. 26.17/18, Zar).   
 %
@@ -9,7 +9,7 @@ function [S s] = circ_var(alpha, w, d, dim)
 %     [d    spacing of bin centers for binned data, if supplied 
 %           correction factor is used to correct for bias in 
 %           estimation of r]
-%     [dim  compute along this dimension, default is 1]
+%     [dim  compute along this dimension, default: 1st non-singular dimension]
 %
 %     If dim argument is specified, all other optional arguments can be
 %     left empty: circ_var(alpha, [], [], dim)
@@ -31,7 +31,10 @@ function [S s] = circ_var(alpha, w, d, dim)
 % berens@tuebingen.mpg.de - www.kyb.mpg.de/~berens/circStat.html
 
 if nargin < 4
-  dim = 1;
+  dim = find(size(alpha) > 1, 1, 'first');
+  if isempty(dim)
+    dim = 1;
+  end    
 end
 
 if nargin < 3 || isempty(d)
@@ -55,3 +58,4 @@ r = circ_r(alpha,w,d,dim);
 % apply transformation to var
 S = 1 - r;
 s = 2 * S;
+end

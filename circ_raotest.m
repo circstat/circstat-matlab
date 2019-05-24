@@ -1,5 +1,5 @@
-function [p U UC] = circ_raotest(alpha)
-
+function [p, U, UC] = circ_raotest(alpha)
+%
 % [p U UC] = circ_raotest(alpha)
 %   Calculates Rao's spacing test by comparing distances between points on
 %   a circle to those expected from a uniform distribution.
@@ -59,11 +59,11 @@ U = U + abs(tn-lambda);
 U = (1/2)*U;
 
 % get critical value from table
-[p UC] = getVal(n,U);
+[p, UC] = getVal(n,U);
 
 
 
-function [p UC] = getVal(N, U)
+function [p, UC] = getVal(N, U)
 
 % Table II from Russel and Levitin, 1995
 
@@ -122,9 +122,5 @@ else
   UC = table(ridx,end-1);
   p = .5;
 end
-
-
-
-
-
-
+end
+end

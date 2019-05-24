@@ -1,6 +1,6 @@
 function [pval, k, K] = circ_kuipertest(alpha1, alpha2, res, vis_on)
 
-% [pval, k, K] = circ_kuipertest(sample1, sample2, res, vis_on)
+% [pval, k, K] = circ_kuipertest(alpha1, alpha2, res, vis_on)
 %
 %   The Kuiper two-sample test tests whether the two samples differ 
 %   significantly.The difference can be in any property, such as mean 
@@ -45,8 +45,8 @@ n = length(alpha1(:));
 m = length(alpha2(:));
 
 % create cdfs of both samples
-[phis1 cdf1 phiplot1 cdfplot1] = circ_samplecdf(alpha1, res);
-[foo, cdf2 phiplot2 cdfplot2] = circ_samplecdf(alpha2, res); %#ok<ASGLU>
+[phis1, cdf1, phiplot1, cdfplot1] = circ_samplecdf(alpha1, res);
+[foo, cdf2, phiplot2, cdfplot2] = circ_samplecdf(alpha2, res); %#ok<ASGLU>
 
 % maximal difference between sample cdfs
 [dplus, gdpi] = max([0 cdf1-cdf2]);
@@ -56,7 +56,7 @@ m = length(alpha2(:));
 k = n * m * (dplus + dminus);
 
 % find p-value
-[pval K] = kuiperlookup(min(n,m),k/sqrt(n*m*(n+m)));
+[pval, K] = kuiperlookup(min(n,m),k/sqrt(n*m*(n+m)));
 K = K * sqrt(n*m*(n+m));
 
 
@@ -83,21 +83,22 @@ end
 
 end
 
-function [p K] = kuiperlookup(n, k)
+function [p, K] = kuiperlookup(n, k)
 
 load kuipertable.mat;
 alpha = [.10, .05, .02, .01, .005, .002, .001];
 nn = ktable(:,1);  %#ok<NODEF>
 
 % find correct row of the table
-[easy row] = ismember(n, nn);
+[easy, row] = ismember(n, nn);
 if ~easy
    % find closest value if no entry is present)
    row = length(nn) - sum(n<nn); 
    if row == 0
        error('N too small.');
    else
-      warning('N=%d not found in table, using closest N=%d present.',n,nn(row)) %#ok<WNTAG>
+      warning('CIRCSTAT:circ_kuipertest:nNotFound', ...
+          'N=%d not found in table, using closest N=%d present.',n,nn(row)) %#ok<WNTAG>
    end
 end
 
@@ -109,5 +110,4 @@ else
   p = 1;
 end
 K = ktable(row,idx+1);
-
 end

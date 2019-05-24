@@ -1,6 +1,6 @@
-function [rho pval] = circ_corrcl(alpha, x)
+function [rho, pval] = circ_corrcl(alpha, x)
 %
-% [rho pval ts] = circ_corrcc(alpha, x)
+% [rho pval] = circ_corrcc(alpha, x)
 %   Correlation coefficient between one circular and one linear random
 %   variable.
 %
@@ -47,4 +47,4 @@ rho = sqrt((rxc^2 + rxs^2 - 2*rxc*rxs*rcs)/(1-rcs^2));
 
 % compute pvalue
 pval = 1 - chi2cdf(n*rho^2,2);
-
+end

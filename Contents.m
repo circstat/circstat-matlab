@@ -60,4 +60,3 @@
 %
 % Author:
 %   Philipp Berens & Marc J. Velasco, 2009
-
