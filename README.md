@@ -4,14 +4,14 @@ CircStat for Matlab
 Toolbox for circular statistics with Matlab. 
 
 ## Authors:
-Philipp Berens & Marc J. Velasco
+Philipp Berens 
 
-*Email*: berens@tuebingen.mpg.de
+*Email*: philipp.berens@uni-tuebingen.de
 
-*Homepage*: http://www.kyb.tuebingen.mpg.de/~berens/circStat.html
+*Homepage*: www.berenslab.org
 
 ## Contributors:
-Tal Krasovsky
+Tal Krasovsky & Marc J. Velasco
 
 ## Reference:
 P. Berens, CircStat: A Matlab Toolbox for Circular Statistics, Journal of Statistical Software, Volume 31, Issue 10, 2009
@@ -78,9 +78,5 @@ If you have suggestions, bugs or feature requests or want to contribute code, pl
 
 ## Disclaimer:
 All functions in this toolbox were implemented with care and tested on the examples presented in 'Biostatistical Analysis' were possible. Nevertheless, they may contain errors or bugs, which may affect the outcome of your analysis. We do not take responsibility for any harm coming from using this toolbox, neither if it is caused by errors in the software nor if it is caused by its improper application. Please email us any bugs you find.
-
-By Philipp Berens and Marc J. Velasco, 2009
-
-berens@tuebingen.mpg.de , velasco@ccs.fau.edu - www.kyb.mpg.de/~berens/circStat.html
 
 Distributed under Open Source BSD License
